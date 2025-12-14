@@ -13,6 +13,8 @@ import EditProfile from "./components/pages/EditProfile";
 import StockReport from "./components/pages/StockReport";
 import InvoiceEntry from "./components/pages/InvoiceEntry";
 import InvoiceDetails from "./components/pages/InvoiceDetails";
+import ManageSuppliers from "./components/pages/ManageSuppliers";
+import ManageProducts from "./components/pages/ManageProducts";
 import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
 import ComingSoon from "./components/pages/ComingSoon";
@@ -40,8 +42,9 @@ const App = () => (
             <Route path="/stock" element={<AppLayout><StockReport /></AppLayout>} />
             <Route path="/invoices" element={<AppLayout><InvoiceEntry /></AppLayout>} />
             <Route path="/invoice/:id" element={<AppLayout><InvoiceDetails /></AppLayout>} />
-            
-            <Route path="/suppliers" element={<AppLayout><ComingSoon title="Manage Suppliers" /></AppLayout>} />
+           <Route path="/suppliers" element={<AppLayout><ManageSuppliers /></AppLayout>} />
+           <Route path="/products" element={<AppLayout><ManageProducts /></AppLayout>} />
+
             <Route path="/customers" element={<AppLayout><ComingSoon title="Manage Customers" /></AppLayout>} />
             <Route path="/units" element={<AppLayout><ComingSoon title="Manage Units" /></AppLayout>} />
             <Route path="/categories" element={<AppLayout><ComingSoon title="Manage Categories" /></AppLayout>} />
