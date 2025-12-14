@@ -1,5 +1,5 @@
-import { useState, createContext, useContext } from 'react';
-import type {ReactNode } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -23,10 +23,18 @@ interface CustomSidebarProviderProps {
 }
 
 export function CustomSidebarProvider({ children, side = 'left' }: CustomSidebarProviderProps) {
-  const [isOpen, setIsOpen] = useState(true);
   const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = useState(!isMobile);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    if (isMobile) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  }, [isMobile]);
 
   return (
     <SidebarContext.Provider value={{ isOpen, toggle }}>
@@ -44,14 +52,14 @@ interface CustomSidebarProps {
 }
 
 export function CustomSidebar({ children, side = 'left', className }: CustomSidebarProps) {
-  const { isOpen } = useSidebarContext();
+  const { isOpen, toggle } = useSidebarContext();
   const isMobile = useIsMobile();
 
   if (isMobile) {
     return (
       <>
         {isOpen && (
-          <div className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm" onClick={() => {}} />
+          <div className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm" onClick={toggle} />
         )}
         <aside
           className={cn(
@@ -61,6 +69,14 @@ export function CustomSidebar({ children, side = 'left', className }: CustomSide
             className
           )}
         >
+          <div className={cn(
+            "absolute top-4 z-50",
+            side === 'left' ? "right-4" : "left-4"
+          )}>
+            <button onClick={toggle} className="p-1 hover:bg-sidebar-accent rounded-md">
+              <X className="h-5 w-5" />
+            </button>
+          </div>
           {children}
         </aside>
       </>

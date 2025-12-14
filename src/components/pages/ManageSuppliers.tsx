@@ -99,7 +99,8 @@ const initialSuppliers: Supplier[] = [
 ];
 
 const ManageSuppliers = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
   const [suppliers, setSuppliers] = useState<Supplier[]>(initialSuppliers);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -231,13 +232,13 @@ const ManageSuppliers = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>{t('supplierName')}</TableHead>
-                  <TableHead>{t('contactPerson')}</TableHead>
-                  <TableHead>{t('phone')}</TableHead>
-                  <TableHead>{t('email')}</TableHead>
-                  <TableHead>{t('address')}</TableHead>
-                  <TableHead>{t('status')}</TableHead>
-                  <TableHead className="text-center">{t('action')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('supplierName')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('contactPerson')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('phone')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('email')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('address')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('status')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('action')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

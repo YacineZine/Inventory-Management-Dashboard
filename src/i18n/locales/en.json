@@ -113,5 +113,22 @@
   "deleteProductConfirmation": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
   "productAdded": "Product added successfully",
   "productUpdated": "Product updated successfully",
-  "productDeleted": "Product deleted successfully"
+  "productDeleted": "Product deleted successfully",
+  "manageCategories": "Manage Categories",
+  "addCategory": "Add Category",
+  "searchCategories": "Search Categories...",
+  "categoryName": "Category Name",
+  "products": "Products",
+  "totalStock": "Total Stock",
+  "actions": "Actions",
+  "noCategoriesFound": "No categories found",
+  "enterCategoryName": "Enter category name",
+  "enterDescription": "Enter description",
+  "selectStatus": "Select status",
+  "categoryNameRequired": "Category name is required",
+  "categoryAdded": "Category added successfully",
+  "categoryUpdated": "Category updated successfully",
+  "categoryDeleted": "Category deleted successfully",
+  "deleteCategoryConfirmation": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
+  "salesTransactions": "Sales Transactions"
 }

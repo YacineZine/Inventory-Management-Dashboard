@@ -45,7 +45,7 @@ const Dashboard = () => {
       <div className="grid lg:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
-            <CardTitle>Sales Transactions</CardTitle>
+            <CardTitle>{t('salesTransactions')}</CardTitle>
           </CardHeader>
           <CardContent>
             <SalesChart />

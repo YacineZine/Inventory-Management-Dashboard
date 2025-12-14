@@ -38,15 +38,15 @@ export function ProductsTable() {
         <Table>
           <TableHeader>
             <TableRow className="bg-success/10">
-              <TableHead>{t('product')}</TableHead>
-              <TableHead className="text-right">{t('soldQty')}</TableHead>
+              <TableHead className="text-start">{t('product')}</TableHead>
+              <TableHead className="text-start">{t('soldQty')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {topProducts.map((product, index) => (
               <TableRow key={index}>
-                <TableCell>{product.name}</TableCell>
-                <TableCell className="text-right">{product.qty}</TableCell>
+                <TableCell className="text-start">{product.name}</TableCell>
+                <TableCell className="text-start">{product.qty}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -61,15 +61,15 @@ export function ProductsTable() {
         <Table>
           <TableHeader>
             <TableRow className="bg-destructive/10">
-              <TableHead>{t('product')}</TableHead>
-              <TableHead className="text-right">{t('soldQty')}</TableHead>
+              <TableHead className="text-start">{t('product')}</TableHead>
+              <TableHead className="text-start">{t('soldQty')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {lowProducts.map((product, index) => (
               <TableRow key={index}>
-                <TableCell>{product.name}</TableCell>
-                <TableCell className="text-right">{product.qty}</TableCell>
+                <TableCell className="text-start">{product.name}</TableCell>
+                <TableCell className="text-start">{product.qty}</TableCell>
               </TableRow>
             ))}
           </TableBody>

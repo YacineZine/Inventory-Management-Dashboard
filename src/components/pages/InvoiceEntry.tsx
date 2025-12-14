@@ -24,6 +24,7 @@ import {
 const InvoiceEntry = () => {
   const { t } = useTranslation();
 
+
   return (
     <div className="space-y-6">
       <Card>
@@ -36,12 +37,12 @@ const InvoiceEntry = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>{t('category')}</TableHead>
-                  <TableHead>{t('productName')}</TableHead>
-                  <TableHead>{t('pscKg')}</TableHead>
-                  <TableHead>{t('unitPrice')}</TableHead>
-                  <TableHead>{t('totalPrice')}</TableHead>
-                  <TableHead>{t('action')}</TableHead>
+                  <TableHead className='text-start'>{t('category')}</TableHead>
+                  <TableHead className='text-start'>{t('productName')}</TableHead>
+                  <TableHead className='text-start'>{t('pscKg')}</TableHead>
+                  <TableHead className='text-start'>{t('unitPrice')}</TableHead>
+                  <TableHead className='text-start'>{t('totalPrice')}</TableHead>
+                  <TableHead className='text-start'>{t('action')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -105,7 +106,7 @@ const InvoiceEntry = () => {
 
           <div className="space-y-2">
             <Label>{t('description')}</Label>
-            <Textarea 
+            <Textarea
               defaultValue="profit = (1000 - 600) * 100 - 500 buy - sell * qty - discount"
               rows={4}
             />

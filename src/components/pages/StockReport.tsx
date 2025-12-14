@@ -96,9 +96,9 @@ const StockReport = () => {
         <CardContent className="space-y-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input 
-              placeholder={t('search')} 
-              className="pl-10" 
+            <Input
+              placeholder={t('search')}
+              className="pl-10"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -108,13 +108,13 @@ const StockReport = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>{t('id')}</TableHead>
-                  <TableHead>{t('supplierName')}</TableHead>
-                  <TableHead>{t('category')}</TableHead>
-                  <TableHead>{t('productName')}</TableHead>
-                  <TableHead className="text-center">{t('inQty')}</TableHead>
-                  <TableHead className="text-center">{t('outQty')}</TableHead>
-                  <TableHead className="text-center">{t('stock')}</TableHead>
+                  <TableHead className='text-start'>{t('id')}</TableHead>
+                  <TableHead className='text-start'>{t('supplierName')}</TableHead>
+                  <TableHead className='text-start'>{t('category')}</TableHead>
+                  <TableHead className='text-start'>{t('productName')}</TableHead>
+                  <TableHead className='text-center'>{t('inQty')}</TableHead>
+                  <TableHead className='text-center'>{t('outQty')}</TableHead>
+                  <TableHead className='text-center'>{t('stock')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -135,8 +135,8 @@ const StockReport = () => {
                       </Badge>
                     </TableCell>
                     <TableCell className="text-center">
-                      <Badge 
-                        variant="outline" 
+                      <Badge
+                        variant="outline"
                         className={item.stock === 0 ? 'bg-destructive/10 text-destructive border-destructive' : 'bg-warning/10 text-warning border-warning'}
                       >
                         {item.stock}
@@ -151,7 +151,7 @@ const StockReport = () => {
           <Button variant="default">{t('addReturns')}</Button>
         </CardContent>
       </Card>
-    </div>
+    </div >
   );
 };
 

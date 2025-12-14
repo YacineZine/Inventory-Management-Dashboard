@@ -124,7 +124,8 @@ const initialProducts: Product[] = [
 ];
 
 const ManageProducts = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -300,15 +301,15 @@ const ManageProducts = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>{t('sku')}</TableHead>
-                  <TableHead>{t('productName')}</TableHead>
-                  <TableHead>{t('category')}</TableHead>
-                  <TableHead>{t('price')}</TableHead>
-                  <TableHead>{t('costPrice')}</TableHead>
-                  <TableHead>{t('stockQuantity')}</TableHead>
-                  <TableHead>{t('stockStatus')}</TableHead>
-                  <TableHead>{t('status')}</TableHead>
-                  <TableHead className="text-center">{t('action')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('sku')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('productName')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('category')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('price')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('costPrice')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('stockQuantity')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('stockStatus')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('status')}</TableHead>
+                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('action')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

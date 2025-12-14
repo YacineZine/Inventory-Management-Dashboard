@@ -113,5 +113,22 @@
   "deleteProductConfirmation": "هل أنت متأكد من حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
   "productAdded": "تمت إضافة المنتج بنجاح",
   "productUpdated": "تم تحديث المنتج بنجاح",
-  "productDeleted": "تم حذف المنتج بنجاح"
+  "productDeleted": "تم حذف المنتج بنجاح",
+  "manageCategories": "إدارة الفئات",
+  "addCategory": "إضافة فئة",
+  "searchCategories": "بحث في الفئات...",
+  "categoryName": "اسم الفئة",
+  "products": "المنتجات",
+  "totalStock": "إجمالي المخزون",
+  "actions": "الإجراءات",
+  "noCategoriesFound": "لم يتم العثور على فئات",
+  "enterCategoryName": "أدخل اسم الفئة",
+  "enterDescription": "أدخل الوصف",
+  "selectStatus": "اختر الحالة",
+  "categoryNameRequired": "اسم الفئة مطلوب",
+  "categoryAdded": "تمت إضافة الفئة بنجاح",
+  "categoryUpdated": "تم تحديث الفئة بنجاح",
+  "categoryDeleted": "تم حذف الفئة بنجاح",
+  "deleteCategoryConfirmation": "هل أنت متأكد من حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
+  "salesTransactions": "معاملات المبيعات"
 }

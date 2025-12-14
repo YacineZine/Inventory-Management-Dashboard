@@ -1,9 +1,9 @@
-// types/index.ts
 export interface MenuItem {
   id: string;
   label: string;
   icon: string;
   active: boolean;
+  path?: string;
 }
 
 export interface Product {
@@ -14,6 +14,27 @@ export interface Product {
   outQty: number;
   stock: number;
   supplier: string;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  description: string;
+  productCount: number;
+  totalStock: number;
+  status: 'active' | 'inactive';
+}
+
+export interface Purchase {
+  id: string;
+  purchaseOrderNumber: string;
+  supplier: string;
+  product: string;
+  quantity: number;
+  unitCost: number;
+  totalCost: number;
+  date: string;
+  status: 'pending' | 'completed' | 'cancelled';
 }
 
 export interface InvoiceItem {
@@ -42,4 +63,11 @@ export interface Language {
   code: 'en' | 'ar';
   name: string;
   dir: 'ltr' | 'rtl';
+}
+
+export interface StatsCard {
+  label: string;
+  value: number;
+  icon: string;
+  color: string;
 }
