@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -72,6 +73,16 @@ const stockData = [
 
 const StockReport = () => {
   const { t } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredData = stockData.filter((item) => {
+    const query = searchQuery.toLowerCase();
+    return (
+      item.supplier.toLowerCase().includes(query) ||
+      item.category.toLowerCase().includes(query) ||
+      item.product.toLowerCase().includes(query)
+    );
+  });
 
   return (
     <div className="space-y-6">
@@ -85,7 +96,12 @@ const StockReport = () => {
         <CardContent className="space-y-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder={t('search')} className="pl-10" />
+            <Input 
+              placeholder={t('search')} 
+              className="pl-10" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
 
           <div className="overflow-x-auto">
@@ -102,7 +118,7 @@ const StockReport = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {stockData.map((item) => (
+                {filteredData.map((item) => (
                   <TableRow key={item.id}>
                     <TableCell>{item.id}</TableCell>
                     <TableCell>{item.supplier}</TableCell>

@@ -1,23 +1,34 @@
-import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import i18n from 'i18next';
 
 export function useLanguage() {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    const dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.dir = dir;
-    document.documentElement.lang = i18n.language;
-  }, [i18n.language]);
+  const [language, setLanguage] = useState(i18n.language || 'en');
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng);
   };
 
-  return {
-    language: i18n.language,
-    changeLanguage,
-    isRTL: i18n.language === 'ar'
-  };
+  useEffect(() => {
+    // Update state when language changes
+    const handleLanguageChanged = (lng: string) => {
+      setLanguage(lng);
+      // Set document direction
+      document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lng;
+    };
+
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    // Set initial direction
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = language;
+
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [language]);
+
+  const isRTL = language === 'ar';
+
+  return { language, changeLanguage, isRTL };
 }
