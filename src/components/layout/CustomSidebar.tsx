@@ -74,7 +74,7 @@ export function CustomSidebar({ children, side = 'left', className }: CustomSide
             side === 'left' ? "right-4" : "left-4"
           )}>
             <button onClick={toggle} className="p-1 text-sidebar-foreground hover:bg-sidebar-accent hover:text-primary rounded-md">
-              <X className="h-5 w-5" />
+              <X className="h-6 w-6" />
             </button>
           </div>
           {children}

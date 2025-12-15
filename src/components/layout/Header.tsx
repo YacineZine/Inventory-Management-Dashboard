@@ -75,7 +75,7 @@ export function Header() {
                   <User className="h-4 w-4" />
                 </AvatarFallback>
               </Avatar>
-              <span className="text-sm font-medium">abdelrahman</span>
+              <span className="text-sm font-medium">Yacine Zine</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -122,7 +122,7 @@ export function Header() {
             <DropdownMenuSeparator />
 
             {/* Profile Links */}
-            <DropdownMenuLabel>Account (abdelrahman)</DropdownMenuLabel>
+            <DropdownMenuLabel>Account (Yacine Zine)</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => navigate('/profile')}>
               <User className="h-4 w-4 mr-2" />
               {t('profile')}

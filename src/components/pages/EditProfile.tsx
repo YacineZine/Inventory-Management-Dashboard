@@ -16,19 +16,19 @@ const EditProfile = () => {
         <CardContent className="space-y-4">
           <div className="grid gap-2">
             <Label htmlFor="name">{t('name')}</Label>
-            <Input id="name" defaultValue="abdelrahman" />
+            <Input id="name" defaultValue="Yacine Zine" />
           </div>
-          
+
           <div className="grid gap-2">
             <Label htmlFor="email">{t('userEmail')}</Label>
-            <Input id="email" type="email" defaultValue="abdoahmed2010@gmail.com" />
+            <Input id="email" type="email" defaultValue="Yacine.zine@gmail.com" />
           </div>
-          
+
           <div className="grid gap-2">
             <Label htmlFor="profile-image">{t('profileImage')}</Label>
             <Input id="profile-image" type="file" />
           </div>
-          
+
           <Button className="w-full sm:w-auto">
             {t('updateProfile')}
           </Button>
@@ -44,12 +44,12 @@ const EditProfile = () => {
             <Label htmlFor="old-password">{t('oldPassword')}</Label>
             <Input id="old-password" type="password" placeholder={t('oldPassword')} />
           </div>
-          
+
           <div className="grid gap-2">
             <Label htmlFor="new-password">{t('newPassword')}</Label>
             <Input id="new-password" type="password" placeholder={t('newPassword')} />
           </div>
-          
+
           <Button className="w-full sm:w-auto">
             {t('changePassword')}
           </Button>

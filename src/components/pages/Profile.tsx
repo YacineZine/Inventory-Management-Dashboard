@@ -18,10 +18,10 @@ const Profile = () => {
               <User className="h-16 w-16" />
             </AvatarFallback>
           </Avatar>
-          
-          <h1 className="text-3xl font-bold mb-2">abdelrahman</h1>
-          <p className="text-muted-foreground mb-6">abdoahmed2010@gmail.com</p>
-          
+
+          <h1 className="text-3xl font-bold mb-2">Yacine Zine</h1>
+          <p className="text-muted-foreground mb-6">Yacine.zine@gmail.com</p>
+
           <Button onClick={() => navigate('/edit-profile')}>
             {t('editProfile')}
           </Button>
