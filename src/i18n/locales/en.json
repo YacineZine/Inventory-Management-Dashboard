@@ -130,5 +130,20 @@
   "categoryUpdated": "Category updated successfully",
   "categoryDeleted": "Category deleted successfully",
   "deleteCategoryConfirmation": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
-  "salesTransactions": "Sales Transactions"
+  "salesTransactions": "Sales Transactions",
+  "managePurchases": "Manage Purchases",
+  "searchPurchases": "Search Purchases...",
+  "addPurchase": "Add Purchase",
+  "purchaseUpdated": "Purchase updated successfully",
+  "purchaseAdded": "Purchase added successfully",
+  "purchaseDeleted": "Purchase deleted successfully",
+  "completed": "Completed",
+  "pending": "Pending",
+  "cancelled": "Cancelled",
+  "poNumber": "PO Number",
+  "date": "Date",
+  "supplier": "Supplier",
+  "quantity": "Quantity",
+  "totalCost": "Total Cost",
+  "noPurchasesFound": "No purchases found"
 }

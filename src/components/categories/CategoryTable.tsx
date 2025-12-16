@@ -18,9 +18,6 @@ interface CategoryTableProps {
     onDelete: (category: Category) => void;
 }
 
-const isRTL = localStorage.getItem('language') === 'ar';
-console.log(isRTL)
-
 export function CategoryTable({ categories, onEdit, onDelete }: CategoryTableProps) {
     const { t } = useTranslation();
 
@@ -29,12 +26,12 @@ export function CategoryTable({ categories, onEdit, onDelete }: CategoryTablePro
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('categoryName')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('description')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('products')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('totalStock')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('status')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('actions')}</TableHead>
+                        <TableHead className="text-start">{t('categoryName')}</TableHead>
+                        <TableHead className="text-start">{t('description')}</TableHead>
+                        <TableHead className="text-start">{t('products')}</TableHead>
+                        <TableHead className="text-start">{t('totalStock')}</TableHead>
+                        <TableHead className="text-start">{t('status')}</TableHead>
+                        <TableHead className="text-start">{t('actions')}</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

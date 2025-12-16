@@ -4,6 +4,11 @@ const data = [
   { date: '2025-06-18', transactions: 6 },
   { date: '2025-06-19', transactions: 5 },
   { date: '2025-06-20', transactions: 2 },
+  { date: '2025-06-20', transactions: 3 },
+  { date: '2025-06-21', transactions: 5 },
+  { date: '2025-06-22', transactions: 6 },
+  { date: '2025-06-23', transactions: 7 },
+  { date: '2025-06-24', transactions: 4 },
 ];
 
 export function SalesChart() {
@@ -12,16 +17,16 @@ export function SalesChart() {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-          <XAxis 
-            dataKey="date" 
+          <XAxis
+            dataKey="date"
             stroke="hsl(var(--foreground))"
             fontSize={12}
           />
-          <YAxis 
+          <YAxis
             stroke="hsl(var(--foreground))"
             fontSize={12}
           />
-          <Tooltip 
+          <Tooltip
             contentStyle={{
               backgroundColor: 'hsl(var(--card))',
               border: '1px solid hsl(var(--border))',

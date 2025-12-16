@@ -19,8 +19,7 @@ interface PurchaseTableProps {
 }
 
 export function PurchaseTable({ purchases, onEdit, onDelete }: PurchaseTableProps) {
-    const { t, i18n } = useTranslation();
-    const isRTL = i18n.language === 'ar';
+    const { t } = useTranslation();
 
     const getStatusBadgeVariant = (status: Purchase['status']) => {
         switch (status) {
@@ -40,14 +39,14 @@ export function PurchaseTable({ purchases, onEdit, onDelete }: PurchaseTableProp
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('poNumber')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('date')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('supplier')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('product')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('quantity')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('totalCost')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('status')}</TableHead>
-                        <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('actions')}</TableHead>
+                        <TableHead className="text-start">{t('poNumber')}</TableHead>
+                        <TableHead className="text-start">{t('date')}</TableHead>
+                        <TableHead className="text-start">{t('supplier')}</TableHead>
+                        <TableHead className="text-start">{t('product')}</TableHead>
+                        <TableHead className="text-start">{t('quantity')}</TableHead>
+                        <TableHead className="text-start">{t('totalCost')}</TableHead>
+                        <TableHead className="text-start">{t('status')}</TableHead>
+                        <TableHead className="text-start">{t('actions')}</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

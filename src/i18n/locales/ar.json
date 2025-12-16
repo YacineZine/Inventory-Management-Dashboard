@@ -130,5 +130,20 @@
   "categoryUpdated": "تم تحديث الفئة بنجاح",
   "categoryDeleted": "تم حذف الفئة بنجاح",
   "deleteCategoryConfirmation": "هل أنت متأكد من حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
-  "salesTransactions": "معاملات المبيعات"
+  "salesTransactions": "معاملات المبيعات",
+  "managePurchases": "إدارة المشتريات",
+  "searchPurchases": "بحث في المشتريات...",
+  "addPurchase": "إضافة شراء",
+  "purchaseUpdated": "تم تحديث الشراء بنجاح",
+  "purchaseAdded": "تمت إضافة الشراء بنجاح",
+  "purchaseDeleted": "تم حذف الشراء بنجاح",
+  "completed": "مكتمل",
+  "pending": "قيد الانتظار",
+  "cancelled": "ملغى",
+  "poNumber": "رقم أمر الشراء",
+  "date": "التاريخ",
+  "supplier": "المورد",
+  "quantity": "الكمية",
+  "totalCost": "التكلفة الإجمالية",
+  "noPurchasesFound": "لم يتم العثور على مشتريات"
 }

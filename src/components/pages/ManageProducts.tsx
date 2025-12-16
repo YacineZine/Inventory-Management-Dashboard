@@ -124,8 +124,7 @@ const initialProducts: Product[] = [
 ];
 
 const ManageProducts = () => {
-  const { t, i18n } = useTranslation();
-  const isRTL = i18n.language === 'ar';
+  const { t } = useTranslation();
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -301,15 +300,15 @@ const ManageProducts = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('sku')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('productName')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('category')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('price')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('costPrice')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('stockQuantity')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('stockStatus')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('status')}</TableHead>
-                  <TableHead className={`${isRTL ? 'text-start' : 'text-end'}`}>{t('action')}</TableHead>
+                  <TableHead className="text-start">{t('sku')}</TableHead>
+                  <TableHead className="text-start">{t('productName')}</TableHead>
+                  <TableHead className="text-start">{t('category')}</TableHead>
+                  <TableHead className="text-start">{t('price')}</TableHead>
+                  <TableHead className="text-start">{t('costPrice')}</TableHead>
+                  <TableHead className="text-start">{t('stockQuantity')}</TableHead>
+                  <TableHead className="text-start">{t('stockStatus')}</TableHead>
+                  <TableHead className="text-start">{t('status')}</TableHead>
+                  <TableHead className="text-start">{t('action')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
