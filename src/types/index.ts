@@ -71,3 +71,43 @@ export interface StatsCard {
   icon: string;
   color: string;
 }
+export interface Customer {
+  id: number;
+  name: string;
+  phone: string;
+  email: string;
+  address: string;
+  totalOrders: number;
+  totalSpent: number;
+  status: "active" | "inactive";
+  lastOrderDate: string | null;
+}
+export interface Products {
+  id: number;
+  name: string;
+  sku: string;
+  category: string;
+  price: number;
+  costPrice: number;
+  stockQuantity: number;
+  minStockLevel: number;
+  status: 'active' | 'inactive';
+}
+export interface Supplier {
+  id: number;
+  name: string;
+  contactPerson: string;
+  phone: string;
+  email: string;
+  address: string;
+  status: 'active' | 'inactive';
+}
+export interface StockData {
+  id: number,
+  supplier: string,
+  category: string,
+  product: string,
+  inQty: number,
+  outQty: number,
+  stock: number,
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { Products } from '@/types/index'
 import { useTranslation } from 'react-i18next';
 import { Search, Plus, Pencil, Trash2, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -39,100 +40,20 @@ import {
 } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-
-interface Product {
-  id: number;
-  name: string;
-  sku: string;
-  category: string;
-  price: number;
-  costPrice: number;
-  stockQuantity: number;
-  minStockLevel: number;
-  status: 'active' | 'inactive';
-}
+import { initialProducts } from '@/data/productData'
 
 const categories = ['Electronics', 'Clothing', 'Food & Beverages', 'Home & Garden', 'Sports', 'Other'];
 
-const initialProducts: Product[] = [
-  {
-    id: 1,
-    name: 'Laptop Pro 15"',
-    sku: 'ELEC-001',
-    category: 'Electronics',
-    price: 1299.99,
-    costPrice: 950.00,
-    stockQuantity: 45,
-    minStockLevel: 10,
-    status: 'active',
-  },
-  {
-    id: 2,
-    name: 'Wireless Mouse',
-    sku: 'ELEC-002',
-    category: 'Electronics',
-    price: 29.99,
-    costPrice: 15.00,
-    stockQuantity: 8,
-    minStockLevel: 20,
-    status: 'active',
-  },
-  {
-    id: 3,
-    name: 'Cotton T-Shirt',
-    sku: 'CLTH-001',
-    category: 'Clothing',
-    price: 24.99,
-    costPrice: 10.00,
-    stockQuantity: 150,
-    minStockLevel: 30,
-    status: 'active',
-  },
-  {
-    id: 4,
-    name: 'Organic Coffee Beans',
-    sku: 'FOOD-001',
-    category: 'Food & Beverages',
-    price: 18.99,
-    costPrice: 8.50,
-    stockQuantity: 5,
-    minStockLevel: 15,
-    status: 'active',
-  },
-  {
-    id: 5,
-    name: 'Garden Hose 50ft',
-    sku: 'HOME-001',
-    category: 'Home & Garden',
-    price: 45.00,
-    costPrice: 22.00,
-    stockQuantity: 0,
-    minStockLevel: 5,
-    status: 'inactive',
-  },
-  {
-    id: 6,
-    name: 'Running Shoes',
-    sku: 'SPRT-001',
-    category: 'Sports',
-    price: 89.99,
-    costPrice: 45.00,
-    stockQuantity: 35,
-    minStockLevel: 10,
-    status: 'active',
-  },
-];
-
 const ManageProducts = () => {
   const { t } = useTranslation();
-  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [products, setProducts] = useState<Products[]>(initialProducts);
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
-  const [productToDelete, setProductToDelete] = useState<Product | null>(null);
+  const [editingProduct, setEditingProduct] = useState<Products | null>(null);
+  const [productToDelete, setProductToDelete] = useState<Products | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     sku: '',
@@ -155,7 +76,7 @@ const ManageProducts = () => {
     return matchesSearch && matchesCategory && matchesStatus;
   });
 
-  const handleOpenDialog = (product?: Product) => {
+  const handleOpenDialog = (product?: Products) => {
     if (product) {
       setEditingProduct(product);
       setFormData({
@@ -214,7 +135,7 @@ const ManageProducts = () => {
       );
       toast.success(t('productUpdated'));
     } else {
-      const newProduct: Product = {
+      const newProduct: Products = {
         id: Math.max(...products.map((p) => p.id), 0) + 1,
         ...productData,
       };
@@ -224,7 +145,7 @@ const ManageProducts = () => {
     handleCloseDialog();
   };
 
-  const handleDeleteClick = (product: Product) => {
+  const handleDeleteClick = (product: Products) => {
     setProductToDelete(product);
     setIsDeleteDialogOpen(true);
   };
@@ -238,7 +159,7 @@ const ManageProducts = () => {
     setProductToDelete(null);
   };
 
-  const getStockBadge = (product: Product) => {
+  const getStockBadge = (product: Products) => {
     if (product.stockQuantity === 0) {
       return <Badge variant="destructive">{t('outOfStock')}</Badge>;
     }

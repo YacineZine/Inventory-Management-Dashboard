@@ -6,8 +6,6 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { AppLayout } from "./components/layout/AppLayout";
 
 import Dashboard from "./components/pages/Dashboard";
-
-
 import Profile from "./components/pages/Profile";
 import EditProfile from "./components/pages/EditProfile";
 import StockReport from "./components/pages/StockReport";
@@ -63,7 +61,6 @@ const App = () => {
               <Route path="/purchases" element={<AppLayout><ManagePurchases /></AppLayout>} />
               <Route path="/support" element={<AppLayout><Support /></AppLayout>} />
 
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

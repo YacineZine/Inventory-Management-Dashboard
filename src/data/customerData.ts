@@ -1,0 +1,48 @@
+import type { Customer } from '../types';
+
+export const initialCustomers: Customer[] = [
+    {
+        id: 1,
+        name: "Ahmed Mohamed",
+        phone: "+966 50 123 4567",
+        email: "ahmed@email.com",
+        address: "123 Main St, Riyadh",
+        totalOrders: 15,
+        totalSpent: 4500,
+        status: "active",
+        lastOrderDate: "2024-01-10",
+    },
+    {
+        id: 2,
+        name: "Sara Abdullah",
+        phone: "+966 55 234 5678",
+        email: "sara@email.com",
+        address: "456 Oak Ave, Jeddah",
+        totalOrders: 8,
+        totalSpent: 2200,
+        status: "active",
+        lastOrderDate: "2024-01-08",
+    },
+    {
+        id: 3,
+        name: "Khalid Hassan",
+        phone: "+966 54 345 6789",
+        email: "khalid@email.com",
+        address: "789 Palm Rd, Dammam",
+        totalOrders: 3,
+        totalSpent: 850,
+        status: "inactive",
+        lastOrderDate: "2023-12-15",
+    },
+    {
+        id: 4,
+        name: "Fatima Ali",
+        phone: "+966 56 456 7890",
+        email: "fatima@email.com",
+        address: "321 Cedar Ln, Mecca",
+        totalOrders: 22,
+        totalSpent: 7800,
+        status: "active",
+        lastOrderDate: "2024-01-12",
+    },
+];

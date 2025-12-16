@@ -13,69 +13,14 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-
-const stockData = [
-  {
-    id: 1,
-    supplier: 'EastAsia Electronics Co.',
-    category: 'Smartphones',
-    product: 'Samsung Galaxy A52',
-    inQty: 5,
-    outQty: 5,
-    stock: 0,
-  },
-  {
-    id: 2,
-    supplier: 'EastAsia Electronics Co.',
-    category: 'Accessories',
-    product: 'USB-C Charging Cable',
-    inQty: 10,
-    outQty: 10,
-    stock: 0,
-  },
-  {
-    id: 3,
-    supplier: 'Nordic Trade Solutions',
-    category: 'Furniture',
-    product: 'IKEA Office Chair',
-    inQty: 2,
-    outQty: 2,
-    stock: 0,
-  },
-  {
-    id: 4,
-    supplier: 'Nordic Trade Solutions',
-    category: 'Lighting',
-    product: 'LED Ceiling Light Panel',
-    inQty: 4,
-    outQty: 4,
-    stock: 0,
-  },
-  {
-    id: 5,
-    supplier: 'Fusion Global Exports',
-    category: 'Laptops',
-    product: 'Apple MacBook Air M2',
-    inQty: 300,
-    outQty: 110,
-    stock: 190,
-  },
-  {
-    id: 6,
-    supplier: 'Al Nour Supplies',
-    category: 'Laptops',
-    product: 'Dell Inspiron 15 3520',
-    inQty: 500,
-    outQty: 100,
-    stock: 400,
-  },
-];
+import { initialStockData } from '@/data/stockData';
+import type { StockData } from '@/types';
 
 const StockReport = () => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredData = stockData.filter((item) => {
+  const StockData: StockData[] = initialStockData;
+  const filteredData = StockData.filter((item) => {
     const query = searchQuery.toLowerCase();
     return (
       item.supplier.toLowerCase().includes(query) ||

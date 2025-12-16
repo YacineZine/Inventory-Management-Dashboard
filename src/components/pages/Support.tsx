@@ -46,9 +46,9 @@ const Support = () => {
     };
 
     const socialLinks = [
-        { icon: Facebook, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-blue-600' },
-        { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-sky-500' },
-        { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-500' },
+        { icon: Facebook, href: 'https://facebook.com/inventoryDz', label: 'Facebook', color: 'hover:text-blue-600' },
+        { icon: Twitter, href: 'https://twitter.com/inventoryDz', label: 'Twitter', color: 'hover:text-sky-500' },
+        { icon: Instagram, href: 'https://instagram.com/inventoryDz', label: 'Instagram', color: 'hover:text-pink-500' },
     ];
 
     return (

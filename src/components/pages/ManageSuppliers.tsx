@@ -39,64 +39,8 @@ import {
 } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-
-interface Supplier {
-  id: number;
-  name: string;
-  contactPerson: string;
-  phone: string;
-  email: string;
-  address: string;
-  status: 'active' | 'inactive';
-}
-
-const initialSuppliers: Supplier[] = [
-  {
-    id: 1,
-    name: 'ABC Trading Co.',
-    contactPerson: 'Ahmed Hassan',
-    phone: '+966 50 123 4567',
-    email: 'ahmed@abctrading.com',
-    address: 'Riyadh, Saudi Arabia',
-    status: 'active',
-  },
-  {
-    id: 2,
-    name: 'Global Supplies Ltd.',
-    contactPerson: 'Sara Ali',
-    phone: '+966 55 987 6543',
-    email: 'sara@globalsupplies.com',
-    address: 'Jeddah, Saudi Arabia',
-    status: 'active',
-  },
-  {
-    id: 3,
-    name: 'Tech Parts Inc.',
-    contactPerson: 'Mohammed Khalid',
-    phone: '+966 54 456 7890',
-    email: 'mohammed@techparts.com',
-    address: 'Dammam, Saudi Arabia',
-    status: 'inactive',
-  },
-  {
-    id: 4,
-    name: 'Premium Goods Co.',
-    contactPerson: 'Fatima Omar',
-    phone: '+966 56 321 0987',
-    email: 'fatima@premiumgoods.com',
-    address: 'Mecca, Saudi Arabia',
-    status: 'active',
-  },
-  {
-    id: 5,
-    name: 'Eastern Imports',
-    contactPerson: 'Khalid Mansour',
-    phone: '+966 58 654 3210',
-    email: 'khalid@easternimports.com',
-    address: 'Medina, Saudi Arabia',
-    status: 'inactive',
-  },
-];
+import { initialSuppliers } from '@/data/supplierData';
+import type { Supplier } from '@/types';
 
 const ManageSuppliers = () => {
   const { t } = useTranslation();
