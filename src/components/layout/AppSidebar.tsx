@@ -2,13 +2,13 @@ import {
   Home,
   Users,
   Shield,
-  Package,
   Layers,
   ShoppingCart,
   ShoppingBag,
   FileText,
   BarChart3,
   HelpCircle,
+  Package,
 } from 'lucide-react';
 import { NavLink } from '@/components/NavLink';
 import { useTranslation } from 'react-i18next';
@@ -24,7 +24,6 @@ export function AppSidebar() {
     { title: t('dashboard'), url: '/', icon: Home },
     { title: t('manageSuppliers'), url: '/suppliers', icon: Users },
     { title: t('manageCustomers'), url: '/customers', icon: Shield },
-    { title: t('manageUnits'), url: '/units', icon: Package },
     { title: t('manageCategory'), url: '/categories', icon: Layers },
     { title: t('manageProduct'), url: '/products', icon: ShoppingBag },
     { title: t('managePurchase'), url: '/purchases', icon: ShoppingCart },
@@ -79,7 +78,7 @@ export function AppSidebar() {
                 <span>{item.title}</span>
               </NavLink>
             ))}
-          </nav>      
+          </nav>
         </div>
       </div>
     </CustomSidebar>

@@ -17,49 +17,60 @@ import ManageSuppliers from "./components/pages/ManageSuppliers";
 import ManageProducts from "./components/pages/ManageProducts";
 import ManageCategories from "./components/pages/ManageCategories";
 import ManagePurchases from "./components/pages/ManagePurchases";
+import ManageCustomers from "./components/pages/ManageCustomers";
+import Support from "./components/pages/Support";
 import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
-import ComingSoon from "./components/pages/ComingSoon";
 import NotFound from "./components/pages/NotFound";
 import "./i18n/config";
 
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <Toaster />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
+const App = () => {
+  const { t, i18n } = useTranslation();
 
-            <Route element={<AppLayout><Dashboard /></AppLayout>}>
-              <Route path="/" element={<Dashboard />} />
-            </Route>
+  useEffect(() => {
+    document.title = t('appTitle');
+    document.dir = i18n.dir(); // Update document direction as well for good measure, though language hook might handle it elsewhere
+  }, [t, i18n]);
 
-            <Route path="/profile" element={<AppLayout><Profile /></AppLayout>} />
-            <Route path="/edit-profile" element={<AppLayout><EditProfile /></AppLayout>} />
-            <Route path="/stock" element={<AppLayout><StockReport /></AppLayout>} />
-            <Route path="/invoices" element={<AppLayout><InvoiceEntry /></AppLayout>} />
-            <Route path="/invoice/:id" element={<AppLayout><InvoiceDetails /></AppLayout>} />
-            <Route path="/suppliers" element={<AppLayout><ManageSuppliers /></AppLayout>} />
-            <Route path="/products" element={<AppLayout><ManageProducts /></AppLayout>} />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <TooltipProvider>
+          <Toaster />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
 
-            <Route path="/customers" element={<AppLayout><ComingSoon title="Manage Customers" /></AppLayout>} />
-            <Route path="/units" element={<AppLayout><ComingSoon title="Manage Units" /></AppLayout>} />
-            <Route path="/categories" element={<AppLayout><ManageCategories /></AppLayout>} />
-            <Route path="/purchases" element={<AppLayout><ManagePurchases /></AppLayout>} />
-            <Route path="/support" element={<AppLayout><ComingSoon title="Support" /></AppLayout>} />
+              <Route element={<AppLayout><Dashboard /></AppLayout>}>
+                <Route path="/" element={<Dashboard />} />
+              </Route>
 
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+              <Route path="/profile" element={<AppLayout><Profile /></AppLayout>} />
+              <Route path="/edit-profile" element={<AppLayout><EditProfile /></AppLayout>} />
+              <Route path="/stock" element={<AppLayout><StockReport /></AppLayout>} />
+              <Route path="/invoices" element={<AppLayout><InvoiceEntry /></AppLayout>} />
+              <Route path="/invoice/:id" element={<AppLayout><InvoiceDetails /></AppLayout>} />
+              <Route path="/suppliers" element={<AppLayout><ManageSuppliers /></AppLayout>} />
+              <Route path="/customers" element={<AppLayout><ManageCustomers /></AppLayout>} />
+              <Route path="/products" element={<AppLayout><ManageProducts /></AppLayout>} />
+              <Route path="/categories" element={<AppLayout><ManageCategories /></AppLayout>} />
+              <Route path="/purchases" element={<AppLayout><ManagePurchases /></AppLayout>} />
+              <Route path="/support" element={<AppLayout><Support /></AppLayout>} />
+
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
