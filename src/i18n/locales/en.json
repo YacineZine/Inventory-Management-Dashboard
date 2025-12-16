@@ -196,5 +196,6 @@
   "messageSent": "Message sent successfully! We'll get back to you soon.",
   "connectWithUs": "Connect With Us",
   "socialDescription": "Follow us on social media for updates",
-  "appTitle": "Inventory Management Dashboard"
+  "appTitle": "Inventory Management Dashboard",
+  "pickDate": "Pick a date"
 }

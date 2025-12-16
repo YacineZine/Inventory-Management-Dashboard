@@ -1,14 +1,22 @@
+import { useState } from 'react';
 import { ShoppingCart, TrendingUp, FileText, DollarSign, Bell } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { type DateRange } from 'react-day-picker';
+import { addDays } from 'date-fns';
 
 import { StatsCard } from '@/components/dashboard/StatsCard';
 import { SalesChart } from '@/components/dashboard/SalesChart';
 import { OrdersChart } from '@/components/dashboard/OrderChart';
 import { ProductsTable } from '@/components/dashboard/ProductTable';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { DateRangePicker } from '@/components/dashboard/DateRangePicker';
 
 const Dashboard = () => {
   const { t } = useTranslation();
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: new Date(),
+    to: addDays(new Date(), 7),
+  });
 
   const notifications = [
     'Samsung Galaxy A52 Less than 20 pieces',
@@ -19,6 +27,11 @@ const Dashboard = () => {
 
   return (
     <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <h2 className="text-3xl font-bold tracking-tight">{t('dashboard')}</h2>
+        <DateRangePicker date={date} setDate={setDate} />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatsCard
           title={t('totalSales')}
