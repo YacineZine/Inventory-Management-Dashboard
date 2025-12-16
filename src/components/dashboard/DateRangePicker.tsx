@@ -1,5 +1,4 @@
-import * as React from "react"
-import { addDays, format } from "date-fns"
+import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { type DateRange } from "react-day-picker"
 import { useTranslation } from "react-i18next"

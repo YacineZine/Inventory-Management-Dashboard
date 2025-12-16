@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# Inventory Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Inventory Management Dashboard built with **React**, **TypeScript**, **Vite**, and **TailwindCSS**. This application is designed to help businesses manage their inventory, suppliers, customers, purchases, and invoices efficiently. It features a comprehensive dashboard with real-time statistics, charts, and reports.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Dashboard Overview:** Real-time visualization of key metrics such as total sales, daily movements, invoices, and average profit. Includes interactive charts for sales transactions and order distribution.
+*   **Inventory Management:**
+    *   **Manage Products:** Add, edit, delete, and view product details including stock levels, purchase prices, and selling prices.
+    *   **Manage Categories:** Organize products into categories for better navigation and filtering.
+    *   **Stock Reports:** Generate detailed reports on stock levels, including low-stock alerts and movement history.
+    *   **Manage Units:** Define and manage units of measurement for products.
+*   **Supplier & Customer Management:**
+    *   **Manage Suppliers:** detailed records of suppliers, including contact information and transaction history.
+    *   **Manage Customers:** specific customer profiles, order history, and contact details.
+*   **Procurement & Sales:**
+    *   **Manage Purchases:** Track purchase orders, manage receipts from suppliers, and update stock levels automatically.
+    *   **Invoice Management:** Create, manage, and print invoices for sales. includes support for "PSC" (pieces) and "KG" units.
+*   **Support Center:** A dedicated support section for users to find help, access FAQs, and contact support.
+*   **User Profile:** Manage user settings, profile information, and authentication.
+*   **Internationalization (i18n):** Fully localized interface with support for English and Arabic (RTL support included).
+*   **Dark Mode:** Built-in dark mode support for better usability in low-light environments.
+*   **Responsive Design:** Fully responsive layout optimized for desktops, tablets, and mobile devices.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Framework:** [React](https://react.dev/) (v18)
+*   **Build Tool:** [Vite](https://vitejs.dev/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components:** [Shadcn UI](https://ui.shadcn.com/) (using Radix UI primitives)
+*   **Icons:** [Lucide React](https://lucide.dev/)
+*   **Charts:** [Recharts](https://recharts.org/)
+*   **State Management & Data Fetching:** [React Query (TanStack Query)](https://tanstack.com/query/latest)
+*   **Routing:** [React Router DOM](https://reactrouter.com/)
+*   **Forms:** [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) validation
+*   **Internationalization:** [i18next](https://www.i18next.com/) & [react-i18next](https://react.i18next.com/)
+*   **Date Handling:** [Date-fns](https://date-fns.org/) & [React Day Picker](https://react-day-picker.js.org/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   Node.js (v18 or higher)
+*   npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1.  Clone the repository:
+    ```bash
+    git clone git@github.com:YacineZine/Inventory-Management-Dashboard.git
+    cd dashboard
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+4.  Open your browser and navigate to `http://localhost:5173`.
+
+### Building for Production
+
+To build the application for production, run:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will create a `dist` directory with the optimized build assets.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/          # Reusable UI components and page-specific components
+│   ├── dashboard/       # Dashboard-specific widgets (Charts, Stats cards)
+│   ├── layout/          # Layout components (Sidebar, Navbar)
+│   ├── pages/           # Main page components (Dashboard, ManageProducts, etc.)
+│   └── ui/              # Shadcn UI primitives (Button, Input, Card, etc.)
+├── contexts/            # React Contexts (ThemeContext, etc.)
+├── data/                # Mock data for development
+├── i18n/                # Internationalization configuration and locales
+├── lib/                 # Utility functions and helpers
+├── types/               # TypeScript type definitions
+└── App.tsx              # Main application component with routing
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
